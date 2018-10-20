@@ -62,9 +62,6 @@ function beforeParsing() {
 }
 
 function afterParsing() {
-	rank_old = rank;
-	msg_old = msg;
-	hunt_old = hunt;
 	first = 0;
 	
 	//Hide preloader animation
@@ -75,16 +72,19 @@ function afterParsing() {
 	hideAudio();
 }
 
-	function showRank(rank) {
-		$('#rank').html('#' + (rank == 0 ? '?' : rank ));
+	function showRank(newRank) {
+		$('#rank').html('#' + (newRank == 0 ? '?' : newRank ));
+		rank = newRank;
 	}
 	
-	function showMessage(msg, lastHunt) {
-		if (typeof msg !== 'undefined') {
-		    $('#msgcontainer').html(msg);
+	function showMessage(newMessage, lastHunt) {
+		if (typeof newMessage !== 'undefined') {
+		    $('#msgcontainer').html(newMessage);
+		    msg = newMessage;
 		}
 		if (typeof lastHunt !== 'undefined') {
 		    $('#huntcontainer').html(lastHunt);
+		    hunt = lastHunt;
 		}
 	}
 	function getJotihuntData() {
@@ -135,7 +135,7 @@ function showVossen(vossen){
 	<?php }?>
 }
 
-function compareData(){		
+function compareData(){
 	if(msg != msg_old){
 		$('#arrow_msg').css('visibility','visible');
 		jwplayer('player1').play();
