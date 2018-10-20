@@ -386,6 +386,16 @@ function make_map($mapOptions) {
     			fillColor: "#FFFFFF",
     			fillOpacity: 0.25
     		});
+    		var circleHomebase2 = new google.maps.Circle({
+    		    map: map,
+    			center: position,
+    			radius: 400,
+    			strokeColor: "#FFFFFF",
+    			strokeOpacity: 0.8,
+    			strokeWeight: 2,
+    			fillColor: "#FFFFFF",
+    			fillOpacity: 0.25
+    		});
     	}
     	
     	function addVosLocatie(map, type, location_coordinaat, adres, last_in_line, prev_location_coordinaat, vos_naam, vos_formatted_datetime, active_counterhuntrondje_id, locatie_counterhuntrondje_id) {
