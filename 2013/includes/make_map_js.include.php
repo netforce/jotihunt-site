@@ -392,9 +392,7 @@ function make_map($mapOptions) {
     			radius: 400,
     			strokeColor: "#FFFFFF",
     			strokeOpacity: 0.8,
-    			strokeWeight: 2,
-    			fillColor: "#FFFFFF",
-    			fillOpacity: 0.25
+    			strokeWeight: 2
     		});
     	}
     	
